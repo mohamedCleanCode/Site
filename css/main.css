@@ -1,0 +1,236 @@
+/*start global rules*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --mainColor: #ff274b;
+    --secondColor: #f7bcf7;
+    --lightColor: #ffffff;
+    --bgColor-1: #171a1c;
+    --bgColor-2: #22282a;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    color: var(--lightColor);
+    text-transform: capitalize;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*end global rules*/
+
+/*small screen*/
+@media(min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/*medium screen*/
+@media(min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/*large screen*/
+@media(min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* Start Heeader */
+.header {
+    height: 70px;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width: 767px) {
+    .header .container {
+        flex-direction: column;
+    }
+}
+.header .logo {
+    width: 80px;
+}
+
+.header .logo h2 {
+    color: var(--secondColor);
+    font-style: italic;
+    font-size: 30px;
+    padding: 30px;
+    position: relative;
+}
+
+.header .logo h2::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    background-color: var(--bgColor-2);
+    z-index: -1;
+    border-radius: 50%;
+}
+.header .links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header .links li {
+    display: inline-block;
+    margin: 0 20px;
+}
+@media (max-width: 767px) {
+    .header .links li {
+        margin: 0 12px 0 0;
+    }
+}
+.header .links li a {
+    color: var(--bgColor-1);
+    padding-bottom: 10px;
+    transition: .3s;
+    position: relative;
+}
+.header .links li a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    background-color: var(--bgColor-2);
+}
+.header .links li a:hover::before {
+    width: 100%;
+}
+
+/* End Heeader */
+
+/* Start Landing */
+.landing {
+    height: calc(100vh - 70px);
+    padding-top: 60px;
+    padding-bottom: 150px;
+}
+.landing .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+@media (max-width: 991px) {
+    .landing .container {
+        flex-direction: column;
+    }
+}
+.landing .text {
+    flex-basis: 50%;
+}
+.landing .text h1,
+.landing .text p {
+    color: var(--bgColor-1);
+    line-height: 1.6;
+}
+.landing .text .btn {
+    cursor: pointer;
+    margin-top: 15px;
+    border: none;
+    padding: 10px 30px;
+    background-color: var(--mainColor);
+    border-radius: 12px;
+    color: var(--lightColor);
+    transition: .3s;
+}
+.landing .text .btn:hover {
+    color: var(--mainColor);
+    background-color: var(--lightColor);
+    border: 1px solid var(--bgColor-2);
+}
+.landing .image {
+    flex-basis: 50%;
+}
+.landing .image img {
+    width: 500px;
+}
+@media (max-width: 991px) {
+    .landing .image img {
+        width: 340px;
+    }
+}
+/* End Landing */
+
+/* Start About Us */
+.about {
+    padding-top: 100px;
+    padding-bottom: 60px;
+}
+.about .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+@media (max-width: 991px) {
+    .about .container {
+        flex-direction: column;
+    }
+}
+.about img {
+    width: 500px;
+    flex-basis: 50%;
+}
+@media (max-width: 991px) {
+    .about img {
+        width: 300px;
+    }
+}
+.about .text {
+    color: var(--bgColor-1);
+    line-height: 2;
+    flex-basis: 50%;
+}
+.about .text h2 {
+    color: var(--mainColor);
+    font-size: 40px;
+}
+.about .text p {
+    line-height: 1.7;
+    color: var(--bgColor-2);
+    margin-bottom: 20px;
+}
+.about .text p:last-child {
+    color: var(--mainColor);
+    font-weight: 800;
+}
+/* End About Us */
